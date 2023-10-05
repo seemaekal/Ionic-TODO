@@ -6,7 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  todos: string[] = [];
+  newTodo: string = '';
 
-  constructor() {}
-
+  addTodo() {
+    if (this.newTodo.trim() !== '') {
+      this.todos.push(this.newTodo.trim());
+      this.newTodo = '';
+    }
+  }
 }
